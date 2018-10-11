@@ -60,6 +60,8 @@
     "mocha": "^5.0.4",
     "puppeteer": "^0.12.0",
     "rimraf": "^2.6.2",
+    "sinon": "^6.3.5",
+    "sinon-as-promised": "^4.0.3",
     "size-limit": "^0.11.4",
     "snazzy": "^7.0.0",
     "standard": "^11.0.1",
