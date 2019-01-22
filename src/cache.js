@@ -77,7 +77,7 @@ function key (config) {
 
 async function defaultInvalidate (cfg, req) {
   const method = req.method.toLowerCase()
-  if (method !== 'get') {
+  if (method !== 'head' && method !== 'get') {
     await cfg.store.removeItem(cfg.uuid)
   }
 }

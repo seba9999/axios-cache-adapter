@@ -1,4 +1,6 @@
 // Karma configuration
+
+const fs = require('fs')
 const webpackConfig = require('./webpack.config')
 
 process.env.CHROME_BIN = require('puppeteer').executablePath()
@@ -62,6 +64,13 @@ module.exports = function (config) {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       }
+    },
+
+    protocol: 'https:',
+
+    httpsServerOptions: {
+      key: fs.readFileSync('./test/server.key', 'utf8'),
+      cert: fs.readFileSync('./test/server.crt', 'utf8')
     },
 
     // Continuous Integration mode
