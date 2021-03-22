@@ -29,6 +29,9 @@ function exclude (config = {}, req) {
     return true
   }
 
+  if (config.maxAge === 0) {
+    return true
+  }
   return false
 }
 

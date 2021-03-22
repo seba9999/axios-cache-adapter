@@ -66,4 +66,14 @@ describe('Cache exclusion', () => {
     assert.ok(exclude(config, { url, params: { shouldExclude: true } }))
     assert.equal(exclude(config, { url }), false)
   })
+
+  it('Should exclude maxAge 0', () => {
+    const config = {
+      maxAge: 0,
+      debug
+    }
+
+    assert.ok(exclude(config, { url, params: { shouldExclude: true } }))
+    assert.equal(exclude(config, { url }), true)
+  })
 })
