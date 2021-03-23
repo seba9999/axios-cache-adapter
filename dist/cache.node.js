@@ -4782,7 +4782,7 @@ function invalidate() {
 function serializeQuery(req) {
   if (!req.params) return ''; // Probably server-side, just stringify the object
 
-  if (typeof URLSearchParams === 'undefined') return JSON.stringify(req.params);
+  if (process && process.env) return JSON.stringify(req.params);
   var params = req.params;
   var isInstanceOfURLSearchParams = req.params instanceof URLSearchParams; // Convert to an instance of URLSearchParams so it get serialized the same way
 

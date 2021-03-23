@@ -99,7 +99,7 @@ function serializeQuery (req) {
   if (!req.params) return ''
 
   // Probably server-side, just stringify the object
-  if (typeof URLSearchParams === 'undefined') return JSON.stringify(req.params)
+  if (process && process.env) return JSON.stringify(req.params)
 
   let params = req.params
 
